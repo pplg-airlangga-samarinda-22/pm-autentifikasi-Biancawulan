@@ -1,5 +1,5 @@
 <?php
-require "./db/koneksi.php";
+require "../db/koneksi.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $nik = $_POST['NIK'];
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (mysqli_num_rows($row) == 1){
         session_start();
         $_SESSION['NIK'] = $nik;
-        header("Location:index.php");
+        header("Location:./index_masyarakat.php");
     }else{
         echo"<script>alert('Gagal Login!')</script>";
     }
@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         <p>Silahkan Login</p>
     <!-- NIK -->
         <div class="form-item">
-            <label for="nik">NIK</label>
-            <input type="text" name="nik" id="required">
+            <label for="NIK">NIK</label>
+            <input type="text" name="NIK" id="required">
         </div>
     <!-- USERNAME -->
         <div class="form-item">

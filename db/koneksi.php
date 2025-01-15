@@ -1,9 +1,10 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'test_db';
 
-$conn = new mysqli($host,$user,$pass,$db);
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$database = "test_db";
+
+$koneksi = new mysqli($hostname,$username,$password,$database);
 
 ?>

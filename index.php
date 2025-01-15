@@ -1,9 +1,6 @@
 <?php
     session_start();
     require_once "./db/koneksi.php";
-    if (empty($_SESSION['NIK'])){
-        header("Location:.login.php");
-    }
 ?>
 
 <!DOCTYPE html>
@@ -12,11 +9,10 @@
     <title>Pelaporan Pengaduan</title>
 </head>
 <body>
-    <h1>Selamat Datang di Aplikasi Pengaduan Masyarakat</h1>
+    <h1>Silahkan Untuk Memilih Role Anda</h1>
     <nav>
-        <a href="index.php">Dashboard</a>
-        <a href="aduan.php">Aduan</a>
-        <a href="logout.php">Logout</a>
+        <a href="./admin/login_admin.php">Admin</a>
+        <a href="./masyarakat/index_masyarakat.php">Masyarakat</a>
     </nav>
 </body>
 </html>

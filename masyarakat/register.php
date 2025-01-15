@@ -1,5 +1,5 @@
 <?php
-require "./db/koneksi.php";
+require "../db/koneksi.php";
 
 if($_SERVER['REQUEST_METHOD']=== "POST"){
     $nik = $_POST['NIK'];
@@ -31,16 +31,16 @@ if($_SERVER['REQUEST_METHOD']=== "POST"){
     <body>
         <form action="" method="post">
             <div class="form-item">
-                <label for="nik">NIK</label>
-                <input type="text" name="nik" id="nik">
+                <label for="NIK">NIK</label>
+                <input type="text" name="NIK" id="NIK">
             </div>
             <div class="form-item">
-                <label for="nama">Nama Lengkap</label>
-                <input type="text" name="nama" id="nama">
+                <label for="Nama">Nama Lengkap</label>
+                <input type="text" name="Nama" id="Nama">
             </div>
             <div class="form-item">
-                <label for="telepon">Nomor Telepon</label>
-                <input type="text" name="telepon" id="telepon">
+                <label for="Telepon">Nomor Telepon</label>
+                <input type="text" name="Telepon" id="Telepon">
             </div>
             <div class="form-item">
                 <label for="username">username</label>
