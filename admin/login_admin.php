@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     
     if (mysqli_num_rows($row) == 1){
         session_start();
-        $_SESSION['id_petugas'] = $id;
+        $_SESSION['username'] = $username;
         header("Location:index_admin.php");
     }else{
         echo"<script>alert('Gagal Login!')</script>";

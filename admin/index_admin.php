@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once "../db/koneksi.php";
-    if (empty($_SESSION['id_petugas'])){
+    if (empty($_SESSION['username'])){
         header("location:../admin/login_admin.php");
     }
 ?>

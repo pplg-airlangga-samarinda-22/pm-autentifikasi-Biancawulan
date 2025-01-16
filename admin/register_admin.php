@@ -2,14 +2,14 @@
 require "../db/koneksi.php";
 
 if($_SERVER['REQUEST_METHOD']=== "POST"){
-    $id = $_POST['id_petugas'];
+    $id = $_POST['username'];
 
     // pengecekkan data id telah terdaftar 
-    $sql = "SELECT * FROM petugas WHERE id_petugas=?";
-    $cek = $koneksi->execute_query($sql, [$id]);
+    $sql = "SELECT * FROM petugas WHERE username=?";
+    $cek = $koneksi->execute_query($sql, [$username]);
 
     if (mysqli_num_rows($cek) == 1){
-        echo "<script>alert('id Telah Digunakan!')</script>";
+        echo "<script>alert('username Telah Digunakan!')</script>";
     }else{
         $nama = $_POST ['Nama'];
         $telepon = $_POST ['Telepon'];
@@ -30,9 +30,6 @@ if($_SERVER['REQUEST_METHOD']=== "POST"){
 </head>
     <body>
         <form action="" method="post">
-            <div class="form-item">
-                <label for="id_petugas">id</label>
-                <input type="text" name="id_petugas" id="id_petugas">
             </div>
             <div class="form-item">
                 <label for="Nama">Nama Lengkap</label>
