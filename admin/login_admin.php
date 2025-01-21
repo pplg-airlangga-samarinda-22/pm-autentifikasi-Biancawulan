@@ -2,23 +2,21 @@
 require "../db/koneksi.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $id = $_POST['id_petugas'];
     $username = $_POST['username'];
     $password = md5($_POST['password']);
-
-    //fungsi execute_query
-    $sql = "SELECT * FROM petugas WHERE id_petugas=? AND username=? AND password=?";
-    $row = $koneksi->execute_query($sql, [$id, $username, $password]);
+    $sql = "SELECT * FROM petugas WHERE username=? AND password=?";
+    $row = $koneksi->execute_query($sql, [$username, $password])->fetch_assoc();
 
     
-    if (mysqli_num_rows($row) == 1){
+    if ($row) {
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION ['id'] = $row['id_petugas'];
+        $_SESSION ['level'] = $row['level'];
         header("Location:index_admin.php");
     }else{
         echo"<script>alert('Gagal Login!')</script>";
     }
-}
+}   
 ?>
 
 <!DOCTYPE html>
@@ -27,22 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>Login</title>
 </head>
 <body>
+    <h1>LOGIN DULU LE</h1>
     <form action="" method="post" class="form-login">
         <p>Silahkan Login</p>
-    <!-- NIK -->
-        <div class="form-item">
-            <label for="id_petugas">ID</label>
-            <input type="text" name="id_petugas" id="required">
-        </div>
     <!-- USERNAME -->
         <div class="form-item">
             <label for="username">Username</label>
-            <input type="text" name="username" id="required">
+            <input type="text" name="username" id="username">
         </div>
     <!-- PASSWORD -->
         <div class="form-item">
             <label for="password">Password</label>
-            <input type="text" name="password" id="required">
+            <input type="password" name="password" id="password">
         </div>
 
         <button type="submit">Login</button>

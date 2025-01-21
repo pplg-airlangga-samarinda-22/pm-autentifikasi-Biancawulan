@@ -12,7 +12,7 @@
     <h1>Silahkan Untuk Memilih Role Anda</h1>
     <nav>
         <a href="./admin/login_admin.php">Admin</a>
-        <a href="./masyarakat/index_masyarakat.php">Masyarakat</a>
+        <a href="./masyarakat/login.php">Masyarakat</a>
     </nav>
 </body>
 </html>

@@ -15,7 +15,7 @@
     <h1>Selamat Datang di Aplikasi Pengaduan Masyarakat</h1>
     <nav>
         <a href="index.php">Dashboard</a>
-        <a href="aduan.php">Aduan</a>
+        <a href="../Masyarakat-Aduan/aduan.php">Aduan</a>
         <a href="logout.php">Logout</a>
     </nav>
 </body>
